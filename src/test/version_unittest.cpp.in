@@ -1,0 +1,16 @@
+// Copyright 2017 The Park Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be found
+// in the LICENSE file.
+
+#include "park/version.h"
+
+namespace park{
+
+static_assert(VersionMajor == @Park_VERSION_MAJOR@,
+    "Version mismatch between version.h and CMakeLists.txt");
+static_assert(VersionMinor == @Park_VERSION_MINOR@,
+    "Version mismatch between version.h and CMakeLists.txt");
+static_assert(VersionPatch == @Park_VERSION_PATCH@,
+    "Version mismatch between version.h and CMakeLists.txt");
+    
+} // namespace park

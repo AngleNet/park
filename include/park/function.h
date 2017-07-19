@@ -1,0 +1,26 @@
+// Copyright 2017 The Park Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be found
+// in the LICENSE file.
+
+#ifndef PARK_INCLUDE_FUNCTION_H_ 
+#define PARK_INCLUDE_FUNCTION_H_
+
+#include <string>
+
+namespace park{
+
+class Function{
+public:
+    Function(std::string id){};
+    virtual run() = 0;
+    virtual ~Function(){};
+};
+
+class CallBack{
+public:
+    CallBack()
+};
+
+} // namespace park
+
+#endif // PARK_INCLUDE_FUNCTION_H_

@@ -2,15 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
 
-#ifndef PARK_INCLUDE_PARAMETER_H_
-#define PARK_INCLUDE_PARAMETER_H_
+#ifndef PARK_INCLUDE_MESSAGE_H_
+#define PARK_INCLUDE_MESSAGE_H_
 
 namespace park{
 
-class Parameter{
-
-};
-
 } // namespace park
 
-#endif // PARK_INCLUDE_PARAMETER_H_
+#endif // PARK_INCLDUE_MESSAGE_H_
