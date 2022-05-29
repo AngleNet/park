@@ -14,12 +14,36 @@
 
 #include <list>
 #include <mutex>  // NOLINT
+#include <unordered_map>
 #include <vector>
 
 #include "buffer/replacer.h"
 #include "common/config.h"
 
 namespace bustub {
+
+class LRUReplacer;
+class FrameNode;
+using FrameNodePtr = FrameNode *;
+
+class FrameNode {
+ private:
+  unsigned int count;
+  frame_id_t frame_id;
+  FrameNodePtr prev;
+  FrameNodePtr next;
+  // A copy constructor is a member function that initializes an object using another
+  // object of the same class
+  FrameNode(const FrameNode &);
+  FrameNode &operator=(FrameNode &);
+
+ public:
+  FrameNode(unsigned int count, frame_id_t frame) : count(count), frame_id(frame), prev(NULL), next{NULL} {}
+  void InsertBefore(FrameNodePtr node);
+  FrameNodePtr RemoveNext();
+  void Unlink();
+  friend class LRUReplacer;
+};
 
 /**
  * LRUReplacer implements the Least Recently Used replacement policy.
@@ -46,7 +70,10 @@ class LRUReplacer : public Replacer {
   size_t Size() override;
 
  private:
-  // TODO(student): implement me!
+  std::unordered_map<frame_id_t, FrameNodePtr> frames;
+  FrameNodePtr pins;
+  FrameNodePtr unpins;
+  unsigned int victims;
 };
 
 }  // namespace bustub

@@ -29,8 +29,8 @@ set(VALGRIND_SUPPRESSIONS_FILE "${PROJECT_SOURCE_DIR}/build_support/valgrind.sup
 ##########################################
 # "make check-tests"
 ##########################################
-add_custom_target(build-tests COMMAND ${CMAKE_CTEST_COMMAND} --show-only)
-add_custom_target(check-tests COMMAND ${CMAKE_CTEST_COMMAND} --verbose)
+add_custom_target(build-tests COMMAND ${CMAKE_CTEST_COMMAND} --show-only) # WW
+add_custom_target(check-tests COMMAND ${CMAKE_CTEST_COMMAND} --verbose) #-54258
 
 ##########################################
 # "make XYZ_test"
